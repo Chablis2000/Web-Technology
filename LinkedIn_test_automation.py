@@ -37,10 +37,10 @@ button.click()
 
 # Find the email field using xpath without id
 email = driver.find_element_by_xpath("//input[@id='username']")
-email.send_keys('bhuvan.prakashponnachana@gmail.com')
+email.send_keys('Enter your email')
 
 password = driver.find_element_by_xpath("//input[@id='password']")
-password.send_keys('adt131chablis.')
+password.send_keys('Enter your Password')
 
 button  = driver.find_element_by_xpath("//button[@class='btn__primary--large from__button--floating']") 
 button.click()
