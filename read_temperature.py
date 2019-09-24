@@ -35,9 +35,19 @@ print (str(temp1))
 if temp1<19:
     button  = driver.find_element_by_xpath("//button[@class='btn btn-primary' and text()='Buy moisturizers']") 
     button.click()
+    if(driver.find_element_by_xpath("//div[@class='row justify-content-center' and h2='Moisturizers']")):
+        print ("Success: launched successfully")
+    else:
+        print ("Failed: page Title is incorrect")
+
 elif temp1>34:
     button  = driver.find_element_by_xpath("//button[@class='btn btn-primary' and text()='Buy sunscreens']") 
     button.click()
+    if(driver.find_element_by_xpath("//div[@class='row justify-content-center' and h2='Sunscreens']")):
+        print ("Success: launched successfully")
+    else:
+        print ("Failed: page Title is incorrect")
+
 
 # Pause the script to wait for page elements to load
 time.sleep(5)
