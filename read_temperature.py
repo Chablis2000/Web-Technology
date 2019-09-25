@@ -20,34 +20,41 @@ driver.maximize_window()
 # Navigate to LinkedIn page
 driver.get("https://weathershopper.pythonanywhere.com/")
 
+#Check the title of the page
+if(driver.title =="The best moisturizers in the world!"):
+    print("Loaded page Successfully")
+else:
+    print("Error Loading Page")
+
 # Get the temperature text input from web page 
 temp  = driver.find_element_by_xpath("//span[@id='temperature']").text
 
 # Filter out and read only the the digits form the string 
 temp1 = int(''.join(filter(lambda i: i.isdigit(), temp)))
 
-# Print the extracted digit
-print (str(temp1))
+#Check the product heading
+def check_page(product,page):
+    if product == page:
+        print("Correct Product Heading")
+    else:
+        print("Inncorrect Product Heading")
 
 # Condition to check weather to buy Moisturizers or Sunscreens depending on the temperature
 # Buy a moisturizer if temperature is less than 19 degree celsius
 # Buy a sunscreen if temperature is greather than 43 degree celsius
 if temp1<19:
-    button  = driver.find_element_by_xpath("//button[@class='btn btn-primary' and text()='Buy moisturizers']") 
-    button.click()
-    if(driver.find_element_by_xpath("//div[@class='row justify-content-center' and h2='Moisturizers']")):
-        print ("Success: launched successfully")
-    else:
-        print ("Failed: page Title is incorrect")
+    product = 'Moisturizers'
+    moist_button  = driver.find_element_by_xpath("//button[@class='btn btn-primary' and text()='Buy moisturizers']") 
+    moist_button.click()
+    moist_page = driver.find_element_by_xpath("//h2").text
+    check_page(product,moist_page)
 
 elif temp1>34:
-    button  = driver.find_element_by_xpath("//button[@class='btn btn-primary' and text()='Buy sunscreens']") 
-    button.click()
-    if(driver.find_element_by_xpath("//div[@class='row justify-content-center' and h2='Sunscreens']")):
-        print ("Success: launched successfully")
-    else:
-        print ("Failed: page Title is incorrect")
-
+    product = 'Sunscreens'
+    sun_button  = driver.find_element_by_xpath("//button[@class='btn btn-primary' and text()='Buy sunscreens']") 
+    sun_button.click()
+    sun_page = driver.find_element_by_xpath("//h2").text
+    check_page(product,sun_page)
 
 # Pause the script to wait for page elements to load
 time.sleep(5)
