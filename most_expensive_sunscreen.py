@@ -60,7 +60,7 @@ print("The price of the sunscreen in the cart is ",final_price)
 if final_price==highest_price:
     print("Correct Product")
 else:
-    print("Inncorrect Product")
+    print("Incorrect Product")
 
 # Close the web browser
 driver.close()
