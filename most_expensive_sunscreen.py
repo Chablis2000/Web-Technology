@@ -2,7 +2,7 @@
 Find the most expensive sunscreen and add it to the cart.
 SCOPE:
 1) Launch Chrome Driver
-2) Navigate to Highest prized sunscreen 
+2) Navigate to Highest priced sunscreen 
 3) Add that sunscreen to the cart
 4) Open the cart
 5) Check if the exact same sunscreen is added
