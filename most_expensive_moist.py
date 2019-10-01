@@ -1,7 +1,7 @@
 """
 Find the most expensive moisturizer and add it to the cart.
 SCOPE:
-1) Launch Firefox Driver
+1) Launch Chrome Driver
 2) Navigate to Highest priced Moisturizer 
 3) Add that moisturizer to the cart
 4) Open the cart
