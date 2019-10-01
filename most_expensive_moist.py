@@ -1,12 +1,14 @@
 """
-Test to read the temperature and choose the products
+Find the most expensive moisturizer and add it to the cart.
+SCOPE:
+1) Launch Firefox Driver
+2) Navigate to Highest prized Moisturizer 
+3) Add that moisturizer to the cart
+4) Open the cart
+5) Check if the exact same moisturizer is added
+6) Print the result
+7) Close the browser
 
-1) Launch Chrome driver
-2) Navigate to weathershopper page
-3) Read the temperature
-4) Click on the desired product depending on the temperature
-5) Open the product list page
-6) Close the driver
 """
 from selenium import webdriver
 import time
