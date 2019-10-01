@@ -11,13 +11,13 @@ Test to read the temperature and choose the products
 from selenium import webdriver
 import time
 
-# Creating an instance of the web browser and navigating to the Moisturizer page
+# Creating an instance of the web browser and navigating to the sunscreen page
 driver = webdriver.Chrome()
 
 # Maximize Browser Window
 driver.maximize_window()
 
-# Navigate to weathershopper's Moisturizer Page
+# Navigate to weathershopper's sunscreen Page
 driver.get('https://weathershopper.pythonanywhere.com/sunscreen')
 
 # Checking if the control lands on the right web page 
@@ -29,19 +29,19 @@ else:
     driver.close()
     exit()
 
-# Creating a list with prizes of all moistirizers
-moisturizer_prices=list()
+# Creating a list with prices of all sunscreen
+sunscreen_prices=list()
 prices_box=driver.find_elements_by_xpath('//div[@class="text-center col-4"]//descendant::p[contains(text(),"Price")]')
 for i in prices_box:
     price=int(i.text.strip("Price: Rs. "))
-    moisturizer_prices.append(price)
-print("The prices of the moisturizers are ",moisturizer_prices)
+    sunscreen_prices.append(price)
+print("The prices of the sunscreens are ",sunscreen_prices)
 
-# Finding the most expensive moisturizer
-highest_price=max(moisturizer_prices)
+# Finding the most expensive sunscreen
+highest_price=max(sunscreen_prices)
 print("The highest price is",highest_price)
 
-# Adding to cart the moisturizer with maximun prize
+# Adding to cart the sunscreen with maximun prize
 add_btn=driver.find_element_by_xpath('//div[@class="text-center col-4"]//descendant::button[contains(@onclick,{})]'.format(highest_price))
 add_btn.click()
 
@@ -54,7 +54,7 @@ time.sleep(3)
 # Check if the final cart total is equal to the highest prize and print Correct or Inncorrect Product
 
 final_price=int(driver.find_element_by_xpath('//div[@class="row justify-content-center top-space-50"]//td[2]').text)
-print("The price of the moisturizer in the cart is ",final_price)
+print("The price of the sunscreen in the cart is ",final_price)
 if final_price==highest_price:
     print("Correct Product")
 else:
