@@ -1,7 +1,7 @@
 """
 Find the most expensive sunscreen and add it to the cart.
 SCOPE:
-1) Launch Firefox Driver
+1) Launch Chrome Driver
 2) Navigate to Highest prized sunscreen 
 3) Add that sunscreen to the cart
 4) Open the cart
