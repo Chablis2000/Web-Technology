@@ -1,5 +1,5 @@
 """
-Find the most expensive moisturizer and add it to the cart.
+Find all the moisturizers and add it to the cart.
 SCOPE:
 1) Launch Chrome Driver
 2) Navigate to Moisturizer page
