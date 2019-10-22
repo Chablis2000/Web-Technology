@@ -106,7 +106,7 @@ print("\n Products in the cart are :\n")
 print("\n".join(cart_products))
 
 # Pause the script to wait for page elements to load
-time.sleep(5)
+time.sleep(3)
 
 # Checking if the products are addedcorrectly 
 if products_added==cart_products:
